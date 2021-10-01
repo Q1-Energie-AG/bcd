@@ -31,6 +31,8 @@ defmodule Bcd.MixProject do
   def application, do: []
 
   defp deps do
-    [{:ex_doc, "~> 0.19", only: :docs}]
+    [
+      {:ex_doc, "~> 0.19", only: :docs, runtime: false}
+    ]
   end
 end
