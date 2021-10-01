@@ -2,7 +2,7 @@
 
 [Documentation](https://hexdocs.pm/bcd).
 
-A simple BCD encoder for elixir.
+A simple [BCD](https://de.wikipedia.org/wiki/BCD-Code) encoder for elixir.
 
 ## Installation
 
