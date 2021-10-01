@@ -1,7 +1,7 @@
 defmodule Bcd.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
   @source_url "https://github.com/Q1-Energie-AG/bcd"
 
   def project do
