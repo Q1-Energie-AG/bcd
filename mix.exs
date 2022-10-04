@@ -32,7 +32,7 @@ defmodule Bcd.MixProject do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.19", only: :docs, runtime: false}
+      {:ex_doc, "~> 0.19", only: :docs, runtime: false},
     ]
   end
 end

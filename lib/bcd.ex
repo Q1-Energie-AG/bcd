@@ -8,10 +8,7 @@ defmodule Bcd do
   """
   @spec encode(integer) :: bitstring
   def encode(value) when is_integer(value) do
-    value
-    |> Integer.digits()
-    |> Enum.map(&to_bitstring/1)
-    |> :erlang.list_to_bitstring()
+    :erlang.list_to_bitstring(for x <- Integer.digits(value), do: <<x::4>>)
   end
 
   @doc """
@@ -19,15 +16,6 @@ defmodule Bcd do
   """
   @spec decode(bitstring) :: integer
   def decode(bitstring) when is_bitstring(bitstring) do
-    bitstring
-    |> decode([])
-    |> Integer.undigits()
+    Integer.undigits(for <<x::4 <- bitstring>>, do: x)
   end
-
-  @spec to_bitstring(integer) :: bitstring
-  defp to_bitstring(digit), do: <<digit::4>>
-
-  @spec decode(bitstring, list(integer)) :: list(integer)
-  defp decode(<<>>, acc), do: acc
-  defp decode(<<n::size(4), rest::bitstring>>, acc), do: decode(rest, acc ++ [n])
 end
